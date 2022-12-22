@@ -1,4 +1,4 @@
-public class Person {
+public class Person{
     private String name;
     private String surname;
     private int age;
@@ -21,8 +21,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return surname + " "+ name + " "+ age + " год(лет)";
+        return surname + " " + name + " "+ age + " год(лет)";
     }
-
-    // создайте toString
 }

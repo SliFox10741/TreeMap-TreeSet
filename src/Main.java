@@ -1,12 +1,20 @@
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Person person = new Person("Maxim","Guselnikov",8);
-        TreeMap<Person, Integer> peoples = new TreeMap<>();
-        Collections.sort(peoples, КОМПАРАТОР);
+
+        List<Person> peoples = new ArrayList<>();
+        peoples.add(new Person("Maxim","Guselnikov",8));
+        peoples.add(new Person("Roman","Pupkin",14));
+        peoples.add(new Person("Boris","Diadkin",64));
+        peoples.add(new Person("katya","Franken",32));
+        peoples.add(new Person("Vasya","Asgin",90));
+
+
+        SurnameComparator surnameComparator = new SurnameComparator();
+
+        Collections.sort(peoples, surnameComparator);
+        System.out.println(peoples);
     }
 }
 

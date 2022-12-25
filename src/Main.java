@@ -11,9 +11,16 @@ public class Main {
         peoples.add(new Person("Vasya","Asgin Berlin Moscow Kusnecov",90));
 
 
-        SurnameComparator surnameComparator = new SurnameComparator();
+        Comparator<Person> surnameComparator = (Person o1, Person o2) -> {
+            int o1LenghtSur = o1.getSurname().split(" ").length;
+            int o2LenghtSur = o2.getSurname().split(" ").length;
+            if (o1LenghtSur == o2LenghtSur || (o1LenghtSur > 3 && o2LenghtSur > 3 )) {
+                return Integer.compare(o2.getAge(), o1.getAge());
+            }
+            return Integer.compare(o2.getSurname().split(" ").length, o1.getSurname().split(" ").length);
+        };
 
-        Collections.sort(peoples, surnameComparator);
+        peoples.sort(surnameComparator);
         System.out.println(peoples);
 
     }

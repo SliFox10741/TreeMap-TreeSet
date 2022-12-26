@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ public class Main {
 
         SurnameComparator surnameComparator = new SurnameComparator();
 
-        Collections.sort(peoples, surnameComparator);
+        peoples.removeIf(xx -> xx.getAge() < 18);
+        peoples.sort(surnameComparator);
         System.out.println(peoples);
 
     }

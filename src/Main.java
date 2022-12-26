@@ -14,7 +14,7 @@ public class Main {
 
         SurnameComparator surnameComparator = new SurnameComparator();
 
-        peoples.removeIf(xx -> xx.getAge() < 18);
+        peoples.removeIf(person -> person.getAge() < 18);
         peoples.sort(surnameComparator);
         System.out.println(peoples);
 
